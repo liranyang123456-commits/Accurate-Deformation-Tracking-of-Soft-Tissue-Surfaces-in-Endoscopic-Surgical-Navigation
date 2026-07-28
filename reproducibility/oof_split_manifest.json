@@ -1,0 +1,467 @@
+{
+  "protocol": "sequence-level dual-domain OOF",
+  "seed": 20260717,
+  "fold_count": 20,
+  "splits": [
+    {
+      "fold_id": "trackves_EV1",
+      "target_domain": "trackves",
+      "test": [
+        [
+          "trackves",
+          "EV1"
+        ]
+      ],
+      "validation": [
+        [
+          "chess",
+          "capture_photos11"
+        ],
+        [
+          "trackves",
+          "EV2"
+        ]
+      ],
+      "train_count": 8353,
+      "val_count": 792,
+      "test_count": 620
+    },
+    {
+      "fold_id": "trackves_EV2",
+      "target_domain": "trackves",
+      "test": [
+        [
+          "trackves",
+          "EV2"
+        ]
+      ],
+      "validation": [
+        [
+          "chess",
+          "captured_photos1"
+        ],
+        [
+          "trackves",
+          "EV3"
+        ]
+      ],
+      "train_count": 8198,
+      "val_count": 1130,
+      "test_count": 437
+    },
+    {
+      "fold_id": "trackves_EV3",
+      "target_domain": "trackves",
+      "test": [
+        [
+          "trackves",
+          "EV3"
+        ]
+      ],
+      "validation": [
+        [
+          "chess",
+          "captured_photos10"
+        ],
+        [
+          "trackves",
+          "IV1"
+        ]
+      ],
+      "train_count": 5793,
+      "val_count": 3517,
+      "test_count": 455
+    },
+    {
+      "fold_id": "trackves_IV1",
+      "target_domain": "trackves",
+      "test": [
+        [
+          "trackves",
+          "IV1"
+        ]
+      ],
+      "validation": [
+        [
+          "chess",
+          "captured_photos2"
+        ],
+        [
+          "trackves",
+          "IV2"
+        ]
+      ],
+      "train_count": 5785,
+      "val_count": 727,
+      "test_count": 3253
+    },
+    {
+      "fold_id": "trackves_IV2",
+      "target_domain": "trackves",
+      "test": [
+        [
+          "trackves",
+          "IV2"
+        ]
+      ],
+      "validation": [
+        [
+          "chess",
+          "captured_photos3"
+        ],
+        [
+          "trackves",
+          "IV3"
+        ]
+      ],
+      "train_count": 8535,
+      "val_count": 855,
+      "test_count": 375
+    },
+    {
+      "fold_id": "trackves_IV3",
+      "target_domain": "trackves",
+      "test": [
+        [
+          "trackves",
+          "IV3"
+        ]
+      ],
+      "validation": [
+        [
+          "chess",
+          "captured_photos4"
+        ],
+        [
+          "trackves",
+          "IV4"
+        ]
+      ],
+      "train_count": 9255,
+      "val_count": 444,
+      "test_count": 66
+    },
+    {
+      "fold_id": "trackves_IV4",
+      "target_domain": "trackves",
+      "test": [
+        [
+          "trackves",
+          "IV4"
+        ]
+      ],
+      "validation": [
+        [
+          "chess",
+          "captured_photos5"
+        ],
+        [
+          "trackves",
+          "IV5"
+        ]
+      ],
+      "train_count": 8844,
+      "val_count": 907,
+      "test_count": 14
+    },
+    {
+      "fold_id": "trackves_IV5",
+      "target_domain": "trackves",
+      "test": [
+        [
+          "trackves",
+          "IV5"
+        ]
+      ],
+      "validation": [
+        [
+          "chess",
+          "captured_photos6"
+        ],
+        [
+          "trackves",
+          "IV6"
+        ]
+      ],
+      "train_count": 9014,
+      "val_count": 344,
+      "test_count": 407
+    },
+    {
+      "fold_id": "trackves_IV6",
+      "target_domain": "trackves",
+      "test": [
+        [
+          "trackves",
+          "IV6"
+        ]
+      ],
+      "validation": [
+        [
+          "chess",
+          "captured_photos7"
+        ],
+        [
+          "trackves",
+          "EV1"
+        ]
+      ],
+      "train_count": 8750,
+      "val_count": 720,
+      "test_count": 295
+    },
+    {
+      "fold_id": "chess_capture_photos11",
+      "target_domain": "chess",
+      "test": [
+        [
+          "chess",
+          "capture_photos11"
+        ]
+      ],
+      "validation": [
+        [
+          "chess",
+          "captured_photos1"
+        ],
+        [
+          "trackves",
+          "EV1"
+        ]
+      ],
+      "train_count": 8115,
+      "val_count": 1295,
+      "test_count": 355
+    },
+    {
+      "fold_id": "chess_captured_photos1",
+      "target_domain": "chess",
+      "test": [
+        [
+          "chess",
+          "captured_photos1"
+        ]
+      ],
+      "validation": [
+        [
+          "chess",
+          "captured_photos10"
+        ],
+        [
+          "trackves",
+          "EV2"
+        ]
+      ],
+      "train_count": 8389,
+      "val_count": 701,
+      "test_count": 675
+    },
+    {
+      "fold_id": "chess_captured_photos10",
+      "target_domain": "chess",
+      "test": [
+        [
+          "chess",
+          "captured_photos10"
+        ]
+      ],
+      "validation": [
+        [
+          "chess",
+          "captured_photos2"
+        ],
+        [
+          "trackves",
+          "EV3"
+        ]
+      ],
+      "train_count": 8694,
+      "val_count": 807,
+      "test_count": 264
+    },
+    {
+      "fold_id": "chess_captured_photos2",
+      "target_domain": "chess",
+      "test": [
+        [
+          "chess",
+          "captured_photos2"
+        ]
+      ],
+      "validation": [
+        [
+          "chess",
+          "captured_photos3"
+        ],
+        [
+          "trackves",
+          "IV1"
+        ]
+      ],
+      "train_count": 5371,
+      "val_count": 4042,
+      "test_count": 352
+    },
+    {
+      "fold_id": "chess_captured_photos3",
+      "target_domain": "chess",
+      "test": [
+        [
+          "chess",
+          "captured_photos3"
+        ]
+      ],
+      "validation": [
+        [
+          "chess",
+          "captured_photos4"
+        ],
+        [
+          "trackves",
+          "IV2"
+        ]
+      ],
+      "train_count": 8171,
+      "val_count": 805,
+      "test_count": 789
+    },
+    {
+      "fold_id": "chess_captured_photos4",
+      "target_domain": "chess",
+      "test": [
+        [
+          "chess",
+          "captured_photos4"
+        ]
+      ],
+      "validation": [
+        [
+          "chess",
+          "captured_photos5"
+        ],
+        [
+          "trackves",
+          "IV3"
+        ]
+      ],
+      "train_count": 8769,
+      "val_count": 566,
+      "test_count": 430
+    },
+    {
+      "fold_id": "chess_captured_photos5",
+      "target_domain": "chess",
+      "test": [
+        [
+          "chess",
+          "captured_photos5"
+        ]
+      ],
+      "validation": [
+        [
+          "chess",
+          "captured_photos6"
+        ],
+        [
+          "trackves",
+          "IV4"
+        ]
+      ],
+      "train_count": 9202,
+      "val_count": 63,
+      "test_count": 500
+    },
+    {
+      "fold_id": "chess_captured_photos6",
+      "target_domain": "chess",
+      "test": [
+        [
+          "chess",
+          "captured_photos6"
+        ]
+      ],
+      "validation": [
+        [
+          "chess",
+          "captured_photos7"
+        ],
+        [
+          "trackves",
+          "IV5"
+        ]
+      ],
+      "train_count": 9209,
+      "val_count": 507,
+      "test_count": 49
+    },
+    {
+      "fold_id": "chess_captured_photos7",
+      "target_domain": "chess",
+      "test": [
+        [
+          "chess",
+          "captured_photos7"
+        ]
+      ],
+      "validation": [
+        [
+          "chess",
+          "captured_photos8"
+        ],
+        [
+          "trackves",
+          "IV6"
+        ]
+      ],
+      "train_count": 9266,
+      "val_count": 399,
+      "test_count": 100
+    },
+    {
+      "fold_id": "chess_captured_photos8",
+      "target_domain": "chess",
+      "test": [
+        [
+          "chess",
+          "captured_photos8"
+        ]
+      ],
+      "validation": [
+        [
+          "chess",
+          "captured_photos9"
+        ],
+        [
+          "trackves",
+          "EV1"
+        ]
+      ],
+      "train_count": 8816,
+      "val_count": 845,
+      "test_count": 104
+    },
+    {
+      "fold_id": "chess_captured_photos9",
+      "target_domain": "chess",
+      "test": [
+        [
+          "chess",
+          "captured_photos9"
+        ]
+      ],
+      "validation": [
+        [
+          "chess",
+          "capture_photos11"
+        ],
+        [
+          "trackves",
+          "EV2"
+        ]
+      ],
+      "train_count": 8748,
+      "val_count": 792,
+      "test_count": 225
+    }
+  ]
+}

@@ -1,0 +1,632 @@
+{
+  "overall": {
+    "tracker": "ours_hybrid_dynamic_online",
+    "n_sequences": 11,
+    "n_units": 22,
+    "n_groups": 22,
+    "n_frames_total": 3848,
+    "bbox_iou_mean": 0.7344924991536633,
+    "mask_iou_mean": 0.7846348591534508,
+    "center_error_mean_px": 48.089140653438946,
+    "precision_rate": 0.6157503527675635,
+    "success_rate": 0.8978450619506586
+  },
+  "sequences": [
+    {
+      "online_unit": "capture_photos11/boards/a",
+      "gt_frames_total": 355,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "a",
+          "board_label": "Type A",
+          "gt_frames": 355,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 355,
+              "bbox_iou_mean": 0.5885563382840175,
+              "mask_iou_mean": 0.706203381462525,
+              "center_error_mean_px": 99.99345264300494,
+              "precision_rate": 0.2507042253521127,
+              "success_rate": 0.8,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "online_unit": "capture_photos11/boards/unknown_from_threshold",
+      "gt_frames_total": 1,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "unknown_from_threshold",
+          "board_label": "unknown_from_threshold",
+          "gt_frames": 1,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 1,
+              "bbox_iou_mean": 1.0,
+              "mask_iou_mean": 1.0,
+              "center_error_mean_px": 0.0,
+              "precision_rate": 1.0,
+              "success_rate": 1.0,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "online_unit": "captured_photos1/boards/a",
+      "gt_frames_total": 262,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "a",
+          "board_label": "Type A",
+          "gt_frames": 262,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 262,
+              "bbox_iou_mean": 0.3890814143781844,
+              "mask_iou_mean": 0.4509276205671124,
+              "center_error_mean_px": 285.78264655639197,
+              "precision_rate": 0.4389312977099237,
+              "success_rate": 0.5190839694656488,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "online_unit": "captured_photos1/boards/b",
+      "gt_frames_total": 413,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "b",
+          "board_label": "Type B",
+          "gt_frames": 413,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 413,
+              "bbox_iou_mean": 0.43052999171712864,
+              "mask_iou_mean": 0.5335322360332035,
+              "center_error_mean_px": 254.86340710311478,
+              "precision_rate": 0.20581113801452786,
+              "success_rate": 0.5811138014527845,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "online_unit": "captured_photos10/boards/a",
+      "gt_frames_total": 3,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "a",
+          "board_label": "Type A",
+          "gt_frames": 3,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 3,
+              "bbox_iou_mean": 0.916594489364432,
+              "mask_iou_mean": 0.9034429729480916,
+              "center_error_mean_px": 10.007747650146484,
+              "precision_rate": 0.6666666666666666,
+              "success_rate": 1.0,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "online_unit": "captured_photos10/boards/b",
+      "gt_frames_total": 261,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "b",
+          "board_label": "Type B",
+          "gt_frames": 261,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 261,
+              "bbox_iou_mean": 0.7126748653530773,
+              "mask_iou_mean": 0.8326325212678685,
+              "center_error_mean_px": 20.986712217330933,
+              "precision_rate": 0.5747126436781609,
+              "success_rate": 0.9731800766283525,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "online_unit": "captured_photos2/boards/b",
+      "gt_frames_total": 64,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "b",
+          "board_label": "Type B",
+          "gt_frames": 64,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 64,
+              "bbox_iou_mean": 0.5874704473472379,
+              "mask_iou_mean": 0.7377614640431422,
+              "center_error_mean_px": 38.883772790431976,
+              "precision_rate": 0.203125,
+              "success_rate": 0.6875,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "online_unit": "captured_photos2/boards/c",
+      "gt_frames_total": 288,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "c",
+          "board_label": "Type C",
+          "gt_frames": 288,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 288,
+              "bbox_iou_mean": 0.6882997219351041,
+              "mask_iou_mean": 0.81848527899017,
+              "center_error_mean_px": 26.511093301491606,
+              "precision_rate": 0.3576388888888889,
+              "success_rate": 0.8506944444444444,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "online_unit": "captured_photos3/boards/a",
+      "gt_frames_total": 789,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "a",
+          "board_label": "Type A",
+          "gt_frames": 789,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 789,
+              "bbox_iou_mean": 0.6063912083447186,
+              "mask_iou_mean": 0.7387815903955193,
+              "center_error_mean_px": 36.292772860808064,
+              "precision_rate": 0.5247148288973384,
+              "success_rate": 0.8073510773130546,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "online_unit": "captured_photos3/boards/unknown_from_threshold",
+      "gt_frames_total": 1,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "unknown_from_threshold",
+          "board_label": "unknown_from_threshold",
+          "gt_frames": 1,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 1,
+              "bbox_iou_mean": 1.0,
+              "mask_iou_mean": 1.0,
+              "center_error_mean_px": 0.0,
+              "precision_rate": 1.0,
+              "success_rate": 1.0,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "online_unit": "captured_photos4",
+      "gt_frames_total": 430,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "b",
+          "board_label": "Type B",
+          "gt_frames": 430,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 430,
+              "bbox_iou_mean": 0.6473616454811969,
+              "mask_iou_mean": 0.7909799752745568,
+              "center_error_mean_px": 79.57076816988545,
+              "precision_rate": 0.44651162790697674,
+              "success_rate": 0.9302325581395349,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "online_unit": "captured_photos5/boards/b",
+      "gt_frames_total": 105,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "b",
+          "board_label": "Type B",
+          "gt_frames": 105,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 105,
+              "bbox_iou_mean": 0.6290544705230167,
+              "mask_iou_mean": 0.6968297510924015,
+              "center_error_mean_px": 61.664026800791426,
+              "precision_rate": 0.047619047619047616,
+              "success_rate": 0.9619047619047619,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "online_unit": "captured_photos5/boards/c",
+      "gt_frames_total": 395,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "c",
+          "board_label": "Type C",
+          "gt_frames": 395,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 395,
+              "bbox_iou_mean": 0.7756304047414554,
+              "mask_iou_mean": 0.8007735616700964,
+              "center_error_mean_px": 26.8986053456234,
+              "precision_rate": 0.4151898734177215,
+              "success_rate": 0.9898734177215189,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "online_unit": "captured_photos5/boards/unknown_from_threshold",
+      "gt_frames_total": 2,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "unknown_from_threshold",
+          "board_label": "unknown_from_threshold",
+          "gt_frames": 2,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 2,
+              "bbox_iou_mean": 0.9805555555555556,
+              "mask_iou_mean": 0.5503472222222222,
+              "center_error_mean_px": 2.0,
+              "precision_rate": 1.0,
+              "success_rate": 1.0,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "online_unit": "captured_photos6/boards/a",
+      "gt_frames_total": 34,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "a",
+          "board_label": "Type A",
+          "gt_frames": 34,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 34,
+              "bbox_iou_mean": 0.6084683799770305,
+              "mask_iou_mean": 0.8275425026208718,
+              "center_error_mean_px": 8.98614513874054,
+              "precision_rate": 1.0,
+              "success_rate": 0.8823529411764706,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "online_unit": "captured_photos6/boards/b",
+      "gt_frames_total": 15,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "b",
+          "board_label": "Type B",
+          "gt_frames": 15,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 15,
+              "bbox_iou_mean": 0.9118248632117217,
+              "mask_iou_mean": 0.8274154716623294,
+              "center_error_mean_px": 4.505180581410726,
+              "precision_rate": 1.0,
+              "success_rate": 1.0,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "online_unit": "captured_photos7",
+      "gt_frames_total": 100,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "a",
+          "board_label": "Type A",
+          "gt_frames": 100,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 100,
+              "bbox_iou_mean": 0.6898124523799514,
+              "mask_iou_mean": 0.7730324379930157,
+              "center_error_mean_px": 12.331416980028152,
+              "precision_rate": 0.9,
+              "success_rate": 0.97,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "online_unit": "captured_photos8/boards/a",
+      "gt_frames_total": 101,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "a",
+          "board_label": "Type A",
+          "gt_frames": 101,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 101,
+              "bbox_iou_mean": 0.7019325327398592,
+              "mask_iou_mean": 0.8123090051162193,
+              "center_error_mean_px": 24.524540091505145,
+              "precision_rate": 0.7029702970297029,
+              "success_rate": 0.9405940594059405,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "online_unit": "captured_photos8/boards/b",
+      "gt_frames_total": 3,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "b",
+          "board_label": "Type B",
+          "gt_frames": 3,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 3,
+              "bbox_iou_mean": 0.8376716048418363,
+              "mask_iou_mean": 0.8460898141514562,
+              "center_error_mean_px": 6.1965484619140625,
+              "precision_rate": 1.0,
+              "success_rate": 1.0,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "online_unit": "captured_photos8/boards/unknown_from_threshold",
+      "gt_frames_total": 1,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "unknown_from_threshold",
+          "board_label": "unknown_from_threshold",
+          "gt_frames": 1,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 1,
+              "bbox_iou_mean": 1.0,
+              "mask_iou_mean": 1.0,
+              "center_error_mean_px": 0.0,
+              "precision_rate": 1.0,
+              "success_rate": 1.0,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "online_unit": "captured_photos9/boards/b",
+      "gt_frames_total": 22,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "b",
+          "board_label": "Type B",
+          "gt_frames": 22,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 22,
+              "bbox_iou_mean": 0.6909778664128684,
+              "mask_iou_mean": 0.767041848499812,
+              "center_error_mean_px": 35.01148555495522,
+              "precision_rate": 0.36363636363636365,
+              "success_rate": 0.8636363636363636,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "online_unit": "captured_photos9/boards/c",
+      "gt_frames_total": 203,
+      "board_group_count": 1,
+      "boards": [
+        {
+          "board_key": "c",
+          "board_label": "Type C",
+          "gt_frames": 203,
+          "trackers": [
+            {
+              "tracker": "ours_hybrid_dynamic_online",
+              "tracker_label": "Ours Hybrid Dynamic Online",
+              "tracker_backend": "ours_hybrid_dynamic_online",
+              "n_frames": 203,
+              "bbox_iou_mean": 0.7659467287922008,
+              "mask_iou_mean": 0.8478382453653016,
+              "center_error_mean_px": 22.950772128081674,
+              "precision_rate": 0.4482758620689655,
+              "success_rate": 0.9950738916256158,
+              "precision_thresh_px": 20.0,
+              "success_iou_thresh": 0.5,
+              "error": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

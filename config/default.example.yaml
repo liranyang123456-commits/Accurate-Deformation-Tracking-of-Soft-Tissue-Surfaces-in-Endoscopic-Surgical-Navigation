@@ -1,0 +1,28 @@
+seed: 20260717
+paths:
+  trackves_intermediate: /path/to/trackves/intermediate
+  trackves_root: /path/to/TrackVes
+  chess_ours_root: /path/to/chessboard/results
+  chess_hist_root: /path/to/chessboard/histab-results
+  artifacts: artifacts
+models:
+  candidate_count: 7
+  feature_dim: 22
+  mlp_hidden: 32
+  transformer_dim: 32
+  transformer_heads: 2
+  transformer_layers: 1
+  visual_channels: 4
+  visual_dim: 32
+training:
+  epochs: 45
+  patience: 8
+  batch_size: 512
+  learning_rate: 0.001
+  weight_decay: 0.0001
+visual_training:
+  epochs: 25
+  patience: 5
+  batch_size: 256
+  learning_rate: 0.0008
+  weight_decay: 0.0001

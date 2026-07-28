@@ -1,0 +1,62 @@
+{
+  "trackves_samples": 5922,
+  "chess_samples": 3843,
+  "trackves_sequences": [
+    "EV1",
+    "EV2",
+    "EV3",
+    "IV1",
+    "IV2",
+    "IV3",
+    "IV4",
+    "IV5",
+    "IV6"
+  ],
+  "chess_sequences": [
+    "capture_photos11",
+    "captured_photos1",
+    "captured_photos10",
+    "captured_photos2",
+    "captured_photos3",
+    "captured_photos4",
+    "captured_photos5",
+    "captured_photos6",
+    "captured_photos7",
+    "captured_photos8",
+    "captured_photos9"
+  ],
+  "candidate_names": [
+    "fusion_out",
+    "nano_raw",
+    "hist_mis",
+    "previous",
+    "blend25",
+    "blend50",
+    "blend75"
+  ],
+  "feature_names": [
+    "dx",
+    "dy",
+    "log_w",
+    "log_h",
+    "source_final",
+    "source_nano",
+    "source_hist",
+    "source_previous",
+    "score",
+    "nano_score",
+    "hist_score",
+    "contour_score",
+    "pseudo3d_score",
+    "size_score",
+    "temporal_score",
+    "risk",
+    "reliability",
+    "iou_nano_mis",
+    "motion",
+    "area_ratio",
+    "domain_trackves",
+    "available"
+  ],
+  "gt_in_features": false
+}

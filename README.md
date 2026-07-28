@@ -54,6 +54,17 @@ python evaluate_visual_oof.py
 python train_final_visual.py --config config/default.yaml
 ```
 
+## Released reproducibility materials
+
+The repository provides a machine-independent configuration template in
+`config/default.example.yaml` and non-image reproducibility materials in
+[`reproducibility/`](reproducibility/): aggregate online-tracking summaries,
+sequence-level OOF split manifests, and the candidate-dataset schema. These
+artifacts contain no raw source images, clinical data, or controlled-benchmark
+annotations. Public source datasets must be obtained from their original
+providers; the controlled benchmark is not redistributed pending documented
+ownership and redistribution permission.
+
 `candidate_exporter.py` consumes immutable per-frame TrackVes intermediate JSON
 and aligned chess result CSVs from completed frozen tracker runs. The chess
 sequence names and all source paths are recorded in the dataset manifest.
