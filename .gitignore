@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.vscode/
+.idea/
+*.pt
+*.onnx
+artifacts/
+config/default.yaml
+.DS_Store
+Thumbs.db
