@@ -1,39 +1,59 @@
-# Nano–HistAB–ContourSim learned box fusion
+# Contour-aware ROI tracking of deforming soft tissue
 
-This directory is a standalone experiment. It does not edit the frozen
-Scheme-C/Nano, HistAB, ContourSim, benchmark, or manuscript sources.
+Code and reproducibility files for the manuscript
 
-## What is implemented
+**Contour-Aware Region-of-Interest Tracking of Deforming Soft Tissue in Endoscopic Surgical Navigation**
 
-- Seven fixed candidate tokens per frame: current Full fusion, Nano, HistAB/MIS,
-  previous frame, and Nano–HistAB 0.25/0.50/0.75 interpolation boxes.
-- 22 inference-safe features per token, including normalized geometry, source
-  confidence, contour/histogram/size/temporal scores, reliability, risk, motion,
-  candidate agreement, and domain. Ground truth is stored separately.
-- Three trainable gates:
-  - `LinearFuser` (23 parameters);
-  - `TinyMLPFuser` (1,889 parameters);
-  - `MicroTransformerFuser` (9,313 parameters; one layer, two heads, width 32).
-- A 45,830-parameter `VisualQualityResidualFuser` with:
-  - synchronized template/current-ROI grayscale, edge, template-difference, and
-    HSV back-projection maps;
-  - candidate IoU-quality prediction;
-  - shared visual backbone with separate chess/TrackVes heads;
-  - bounded continuous center/size correction outside the candidate convex hull;
-  - sequence-balanced sampling and target-domain validation calibration.
-- The selected 46,046-parameter dynamic variant adds an inference-safe EMA
-  template and two adaptive-template response channels.
-- Advanced ablations additionally implement a frame-level GRU safety/size
-  calibrator, 25-box local expansion, dense every-frame Nano consistency GRU,
-  real-mask heads, frozen-response hooks, and independent-sequence validation.
-- Frozen Full fusion, Nano, HistAB, score heuristic, conservative domain router,
-  and GT-only oracle baselines.
-- Sequence-level dual-domain OOF: 9 TrackVes folds and 11 chess folds. Every
-  fold uses one target-domain test sequence and validation sequences from both
-  domains. Normalization, early stopping, checkpoint choice, and residual
-  calibration are fitted only on train/validation data.
+submitted to *Sensors* (MDPI).
 
-## Reproduce
+This repository provides the online tracker, conservative and learned-gate extensions, configuration templates, analysis scripts, and aggregate evaluation summaries reported in the paper. It does not redistribute third-party images, clinical recordings, or the controlled-benchmark source videos.
+
+## Scope
+
+The method tracks a region of interest (ROI) around a deforming tissue area under the TrackVes safety-area protocol. It does **not** estimate dense point correspondences, tissue displacement fields, or surface strain.
+
+One pipeline is used throughout:
+
+| Name | What it is |
+|---|---|
+| **Ours** (`ours_scheme_c_nano`) | NanoTrack spatial prior + ContourSimilarityNet + HSV-histogram (HistAB) verification |
+| **Ours-Conservative** | Fixed-rule size and re-detection arbitration around NanoTrack |
+| **Ours-LearnedGate** | Supervised leave-one-sequence-out quality gate |
+| **Ours-Contour** | Contour-based region delineation used in the segmentation comparison |
+
+## Reported headline results
+
+Numbers below are copied from the released evaluation logs. They are **not** a claim of uniform superiority over NanoTrack.
+
+| Setting | Metric | Leading method | Score | Comparator | Note |
+|---|---|---|---:|---|---|
+| CholecSeg8k, zero-shot/prompted | Dice | Ours-Contour | 0.769 ± 0.13 | MedSAM 0.736 | paired Wilcoxon *p* < 0.01 |
+| Controlled *N* = 11 | Std-IoU | NanoTrack | 0.712 ± 0.10 | Ours 0.706 | overlap |
+| Controlled, official TrackEval | HOTA / AssA | Ours | 0.645 / 0.710 | NanoTrack 0.629 / 0.667 | association |
+| TrackVes, 9 sequences | BBox-IoU | Ours-LearnedGate | 0.520 ± 0.22 | NanoTrack 0.492 | *p* = 0.50, not significant |
+
+Full tables, sequence-level summaries, and split manifests are in [`reproducibility/`](reproducibility/).
+
+## Public datasets (obtain from the original providers)
+
+- [CholecSeg8k](https://arxiv.org/abs/2012.12453)
+- [Kvasir-Instrument](https://datasets.simula.no/kvasir-instrument/)
+- [TrackVes](https://doi.org/10.5281/zenodo.822053)
+- [COCO 2017](https://cocodataset.org/) (contour pseudo-label pretraining only)
+
+The controlled chessboard sequences are not redistributed. Ownership and redistribution permission have not been documented.
+
+## Environment
+
+Python 3.10 or later. Install the packages listed in `requirements.txt`:
+
+```text
+pip install -r requirements.txt
+```
+
+OpenCV NanoTrack ONNX weights and a ContourSimilarityNet checkpoint are required for the online path. Place them according to `config/default.example.yaml` (copy to `config/default.yaml` and edit local paths).
+
+## Reproduce the online evaluations
 
 From this directory:
 
@@ -41,84 +61,33 @@ From this directory:
 run_all.bat
 ```
 
-Or run each stage:
+Or run stages separately:
 
-```powershell
-python candidate_exporter.py --config config/default.yaml
-python run_nested_oof.py --config config/default.yaml
-python evaluate_oof.py
-python make_figures.py
-python visual_feature_exporter.py --config config/default.yaml
-python run_visual_oof.py --config config/default.yaml
-python evaluate_visual_oof.py
-python train_final_visual.py --config config/default.yaml
+```text
+python run_trackves_online.py --config config/default.yaml
+python run_trackves_conservative.py --config config/default.yaml
+python run_trackves_global_gate_online.py --config config/default.yaml
+python run_chess_online.py --config config/default.yaml
 ```
 
-## Released reproducibility materials
+Sequence-level out-of-fold splits are recorded in
 
-The repository provides a machine-independent configuration template in
-`config/default.example.yaml` and non-image reproducibility materials in
-[`reproducibility/`](reproducibility/): aggregate online-tracking summaries,
-sequence-level OOF split manifests, and the candidate-dataset schema. These
-artifacts contain no raw source images, clinical data, or controlled-benchmark
-annotations. Public source datasets must be obtained from their original
-providers; the controlled benchmark is not redistributed pending documented
-ownership and redistribution permission.
+- `reproducibility/oof_split_manifest.json`
+- `reproducibility/visual_oof_split_manifest.json`
 
-`candidate_exporter.py` consumes immutable per-frame TrackVes intermediate JSON
-and aligned chess result CSVs from completed frozen tracker runs. The chess
-sequence names and all source paths are recorded in the dataset manifest.
+Do not retune thresholds on a held-out test sequence if you intend to match the paper protocol.
 
-## Outputs
+## What is not claimed
 
-- `artifacts/candidate_dataset.npz`: unified 9,765-frame dataset.
-- `artifacts/dataset_manifest.json`: schema and sequence inventory.
-- `artifacts/checkpoints/<fold>/`: 60 fold-specific checkpoints.
-- `artifacts/oof_predictions.csv`: predictions for all eight methods.
-- `artifacts/run_manifest.json`: splits, seeds, commands, model histories,
-  checkpoint hashes, versions, parameter counts, and timing.
-- `artifacts/evaluation/`: aggregate/sequence metrics, corrected Wilcoxon tests,
-  LaTeX table, and PNG/PDF figures.
-- `RESULTS_REPORT.md`: interpretation and paper-use caveats.
-- `artifacts/visual_responses.npz`: synchronized response maps for all frames.
-- `artifacts/visual_checkpoints/<fold>/`: 20 visual fold checkpoints.
-- `artifacts/visual_oof_predictions.csv`: complete visual OOF predictions.
-- `artifacts/visual_evaluation/` and `VISUAL_RESULTS_REPORT.md`: visual model,
-  continuous-oracle, significance, timing, figure, and LaTeX outputs.
-- `artifacts/deployment/hybrid_visual_chess.pt`: all-sequence deployment
-  checkpoint; load it with `HybridVisualRouterTracker`.
-- `artifacts/deployment/hybrid_dynamic_chess.pt`: selected adaptive-template
-  deployment checkpoint.
-- `artifacts/deployment/chess_mask_head.pt`: selected chess real-mask head.
-- `ADVANCED_RESULTS_REPORT.md`: all positive and negative advanced ablations.
+- Uniform improvement over NanoTrack on every overlap metric
+- Dense deformation-field or point-trajectory accuracy
+- AR/MR navigation endpoint accuracy
+- Strict zero-shot TrackVes evaluation for original Ours and Ours-Conservative (the frozen ContourSimilarityNet has in-domain TrackVes supervision; see the paper)
 
-## Result
+## Citation
 
-Scalar-only learned models did not beat Full fusion. Static visual responses
-raised equal-domain sequence-mean BBox-IoU to 0.6031. The selected dynamic
-hybrid uses adaptive-template visual residual fusion on chess and Nano on
-TrackVes, reaching 0.6083 versus 0.5961 for the previous domain router and
-0.5956 for Full fusion. On chess it reaches 0.7302 versus 0.7058 for Full
-fusion and 0.7296 for the discrete candidate oracle; 9/11 sequences improve.
-The primary one-sided sequence Wilcoxon p-value is 0.0337, but it is exploratory
-because the variant was selected after ablations. TrackVes retains Nano's best
-tested result rather than applying a harmful visual correction.
+If you use this code, please cite the Sensors manuscript once it is published. Until then, cite this repository and the public datasets above.
 
-The selected dynamic overhead is approximately 3.9 ms/frame on the current
-machine (about 3.75 ms response preprocessing and 0.15 ms network inference), excluding
-the unchanged frozen tracker runtime.
+## License
 
-The chess mask head reaches ROI Mask-IoU 0.7740 versus 0.4824 for the bbox mask.
-The TrackVes polygon-mask head is worse (0.1639 versus 0.2210), so deployment
-routes chess to the learned mask and TrackVes to the bbox mask. Dense-frame
-motion consistency improves Nano on all nine TrackVes sequences under its
-sequential protocol (macro 0.3860 versus 0.3834).
-
-OpenCV TrackerNano does not expose its true Siamese dense correlation map.
-`internal_response_hook.py` captures the real Scheme-C Gaussian prior and any
-returned hierarchy arrays when those paths execute; derived template responses
-remain explicitly labelled as derived. The external-sequence adapter is ready,
-but no unsupplied real sequence is fabricated.
-
-Mask/Cov-IoU is intentionally not synthesized: combining boxes does not produce
-a new segmentation mask. Existing paper files are untouched.
+The source files in this repository are released under the MIT License (see `LICENSE`). Third-party datasets remain under their original terms.
