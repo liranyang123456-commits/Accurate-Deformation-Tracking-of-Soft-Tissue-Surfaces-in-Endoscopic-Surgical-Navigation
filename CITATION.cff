@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this software, please cite it using the metadata in this file.
 type: software
-title: "Contour-aware region-of-interest tracking of deforming soft tissue for endoscopic surgical navigation: source code, configuration templates and result summaries"
+title: "Annotation-free contour verification for region-level tracking of deforming soft tissue in endoscopy: source code, configuration templates and result summaries"
 authors:
   - family-names: Li
     given-names: Ranyang
