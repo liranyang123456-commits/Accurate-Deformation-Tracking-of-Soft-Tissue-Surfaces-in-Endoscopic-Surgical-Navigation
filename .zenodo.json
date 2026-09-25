@@ -1,0 +1,44 @@
+{
+  "title": "Contour-aware region-of-interest tracking of deforming soft tissue for endoscopic surgical navigation: source code, configuration templates and result summaries",
+  "description": "Source code, configuration templates, analysis scripts, aggregate online-tracking result summaries and sequence-level out-of-fold split manifests for a contour-aware verification and arbitration layer around the OpenCV NanoTrack tracker, evaluated on CholecSeg8k, Kvasir-Instrument, a controlled chessboard benchmark and the public TrackVes soft-tissue tracking dataset. The repository does not redistribute third-party datasets.",
+  "upload_type": "software",
+  "license": "MIT",
+  "access_right": "open",
+  "creators": [
+    {
+      "name": "Li, Ranyang",
+      "affiliation": "School of Artificial Intelligence and Big Data, Henan University of Technology, Zhengzhou, China"
+    },
+    {
+      "name": "Zhu, Ziyu",
+      "affiliation": "School of Artificial Intelligence and Big Data, Henan University of Technology, Zhengzhou, China"
+    },
+    {
+      "name": "Wei, Nan",
+      "affiliation": "Henan Provincial People's Hospital, Zhengzhou University, Zhengzhou, China"
+    },
+    {
+      "name": "Liu, Wufeng",
+      "affiliation": "School of Artificial Intelligence and Big Data, Henan University of Technology, Zhengzhou, China"
+    },
+    {
+      "name": "Fan, Chao",
+      "affiliation": "School of Artificial Intelligence and Big Data, Henan University of Technology, Zhengzhou, China"
+    },
+    {
+      "name": "Lin, Zhipeng",
+      "affiliation": "State Key Laboratory of Virtual Reality Technology and Systems, Beihang University, Beijing, China"
+    }
+  ],
+  "keywords": [
+    "soft-tissue tracking",
+    "region of interest",
+    "contour detection",
+    "endoscopic video",
+    "minimally invasive surgery",
+    "surgical navigation",
+    "tracking evaluation",
+    "NanoTrack"
+  ],
+  "language": "eng"
+}
