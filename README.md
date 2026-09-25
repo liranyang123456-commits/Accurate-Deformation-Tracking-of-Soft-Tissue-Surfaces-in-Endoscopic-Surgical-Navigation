@@ -1,8 +1,8 @@
-# Contour-aware ROI tracking of deforming soft tissue
+# Annotation-free contour verification for region-level tracking of deforming soft tissue
 
 Code and reproducibility files for the manuscript
 
-**Contour-Aware Region-of-Interest Tracking of Deforming Soft Tissue in Endoscopic Surgical Navigation**
+**Annotation-free contour verification for region-level tracking of deforming soft tissue in endoscopy**
 
 submitted to *Sensors* (MDPI).
 
