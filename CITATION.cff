@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: If you use this software, please cite it using the metadata in this file.
+type: software
+title: "Contour-aware region-of-interest tracking of deforming soft tissue for endoscopic surgical navigation: source code, configuration templates and result summaries"
+authors:
+  - family-names: Li
+    given-names: Ranyang
+    affiliation: "School of Artificial Intelligence and Big Data, Henan University of Technology, Zhengzhou, China"
+  - family-names: Zhu
+    given-names: Ziyu
+    affiliation: "School of Artificial Intelligence and Big Data, Henan University of Technology, Zhengzhou, China"
+  - family-names: Wei
+    given-names: Nan
+    affiliation: "Henan Provincial People's Hospital, Zhengzhou University, Zhengzhou, China"
+  - family-names: Liu
+    given-names: Wufeng
+    affiliation: "School of Artificial Intelligence and Big Data, Henan University of Technology, Zhengzhou, China"
+  - family-names: Fan
+    given-names: Chao
+    affiliation: "School of Artificial Intelligence and Big Data, Henan University of Technology, Zhengzhou, China"
+  - family-names: Lin
+    given-names: Zhipeng
+    affiliation: "State Key Laboratory of Virtual Reality Technology and Systems, Beihang University, Beijing, China"
+license: MIT
+repository-code: https://github.com/liranyang123456-commits/Accurate-Deformation-Tracking-of-Soft-Tissue-Surfaces-in-Endoscopic-Surgical-Navigation
+keywords:
+  - soft-tissue tracking
+  - region of interest
+  - contour detection
+  - endoscopic video
+  - minimally invasive surgery
+  - surgical navigation
+  - tracking evaluation
+  - NanoTrack
+abstract: >-
+  Source code, configuration templates, analysis scripts, aggregate online-tracking result summaries and sequence-level out-of-fold split manifests for a contour-aware verification and arbitration layer around the OpenCV NanoTrack tracker, evaluated on CholecSeg8k, Kvasir-Instrument, a controlled chessboard benchmark and the public TrackVes soft-tissue tracking dataset. The repository does not redistribute third-party datasets.
